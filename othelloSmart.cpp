@@ -387,7 +387,8 @@ int main() {
         cout << "[Enter 1 for black, -1 for white]: ";
     } 
     cin.getline(X, 200);
-    color = X[0] - 48;
+    if (X[0] == '-') color = 48 - X[1];
+    else color = X[0] - 48;
 	if (color*color != 1) 
         throw invalid_argument("\nInvalid Color!");
     cout << endl << "Squares (x, y) are numbered from (1, 1) to (8, 8). ";
