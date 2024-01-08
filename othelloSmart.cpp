@@ -95,10 +95,12 @@ int playerMove (int** board, int x, int y, int person, int isPlayer, int makeMov
         // isPlayer.
         // Here, if i am validating or computer playing 
         // then i don't want unnessary error messages.
+        delete [] moves;
         return 0; 
         // Exception handling.
     } 
     if (board[x - 1][y - 1] != 0) {
+        delete [] moves;
         if (isPlayer) cout << "Piece exists on chosen square. Enter valid move. " << endl;
         return 0; 
         // Exception: We can't superimpose an existing square.
