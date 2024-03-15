@@ -1,4 +1,5 @@
 all: othelloSmart
+	./othelloSmart
 
 %: %.cpp
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
@@ -6,3 +7,5 @@ all: othelloSmart
 
 clean:
 	rm -rf othelloSmart
+
+.PHONY: all clean
