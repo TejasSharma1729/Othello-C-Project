@@ -250,11 +250,11 @@ int isMovable (int** board, int person, int isPlayer, int diff, int diff0, char*
                 int** board1 = new int* [8]; 
                 // Duplicate board for checking future moves (smart algorithm)
 
-                for (int i = 0; i < 8; i++) 
-                    board1[i] = new int [8];
-                for (int i = 0; i < 8; i++)
-                    for (int j = 0; j < 8; j++)
-                        board1[i][j] = board[i][j];
+                for (int k = 0; k < 8; k++) 
+                    board1[k] = new int [8];
+                for (int k = 0; k < 8; k++)
+                    for (int l = 0; l < 8; l++)
+                        board1[k][l] = board[k][l];
                 
                 point -= playerMove (board1, i + 1, j + 1, person, 0, 0);
                 point += playerMove (board1, i + 1, j + 1, person, 0, 1); 
@@ -266,7 +266,7 @@ int isMovable (int** board, int person, int isPlayer, int diff, int diff0, char*
                 // According to that the computer makes its next move... 
                 // but does not display anything (disp = 0) and 
                 // computes the most efficient sum of moves...
-                for (int i = 0; i < 8; i++) delete [] board1[i];
+                for (int k = 0; k < 8; k++) delete [] board1[i];
                 delete [] board1;
             }
             // Difficulty 0 means any random legal move done by computer. 
