@@ -364,8 +364,10 @@ int main() {
     cin.getline(X, 200);
     if (X[0] == '0') comp = 0;
     else if (X[0] == '1') comp = 1;
-    else
-        throw invalid_argument("\nInvalid Choice!");
+    else {
+        cerr << "Invalid Choice!" << endl;
+        abort();
+    }
     // if (comp) means if (computer is not playing but its p1 vs p2) and not 
     // if (computer is playing) Don't confuse here.
 
@@ -379,8 +381,10 @@ int main() {
         cin.getline(X, 200);
         diff = X[0] - 48;
         cout << endl;
-		if (diff < 0 || diff > 3) 
-            throw invalid_argument("\nInvalid Difficulty!");
+        if (diff < 0 || diff > 3) {
+            cerr << "Invalid Difficulty!" << endl;
+            abort();
+        }
         cout << "Enter your color of choice (Black starts first) "; 
         cout << "[Enter 1 for black, -1 for white]: ";
     } 
@@ -391,8 +395,10 @@ int main() {
     cin.getline(X, 200);
     if (X[0] == '-') color = 48 - X[1];
     else color = X[0] - 48;
-	if (color*color != 1) 
-        throw invalid_argument("\nInvalid Color!");
+    if (color*color != 1) {
+        cerr << "Invalid Color!" << endl;
+        abort();
+    }
     cout << endl << "Squares (x, y) are numbered from (1, 1) to (8, 8). ";
     cout << "(1, 1) being the bottom left and (8, 8) top right" << endl; 
     cout << "Note that x --> left (1) to right (8). ";

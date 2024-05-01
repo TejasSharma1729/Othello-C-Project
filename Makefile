@@ -1,9 +1,9 @@
 all: othelloSmart
-	./othelloSmart
 
-%: %.cpp
+othelloSmart: othelloSmart.cpp
 	$(CXX) $(CXXFLAGS) $^ $(LDFLAGS) -o $@
 	rm -rf *.dSYM
+	./othelloSmart
 
 clean:
 	rm -rf othelloSmart
